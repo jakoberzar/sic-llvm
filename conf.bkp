@@ -1,0 +1,18 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[submodule]
+	active = .
+[remote "origin"]
+	url = git@github.com:jakoberzar/sic-llvm-dev.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "24-bit"]
+	remote = origin
+	merge = refs/heads/24-bit
+[submodule "tools/clang"]
+	url = git@github.com:jakoberzar/sic-clang.git
+[branch "cleanup"]
+	remote = origin
+	merge = refs/heads/cleanup

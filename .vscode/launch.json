@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch - Clang",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../build/bin/clang-3.9",
+            "args": [ "-cc1", "-triple", "sic-linux-gnu-unknown", "-emit-llvm-bc", "-emit-llvm-uselists", "-disable-free", "-main-file-name", "ch6_1.cpp", "-mrelocation-model", "static", "-mthread-model", "posix", "-mdisable-fp-elim", "-fmath-errno", "-no-integrated-as", "-mconstructor-aliases", "-dwarf-column-info", "-debugger-tuning=gdb", "-coverage-file", "/home/mudk1p/llvm-tutorial/clang-sic/build/bin/-", "-resource-dir", "/home/mudk1p/llvm-tutorial/clang-sic/build/bin/../lib/clang/3.9.0", "-internal-isystem", "/usr/local/include", "-internal-isystem", "/home/mudk1p/llvm-tutorial/clang-sic/build/bin/../lib/clang/3.9.0/include", "-internal-externc-isystem", "/include", "-internal-externc-isystem", "/usr/include", "-fdeprecated-macro", "-fno-dwarf-directory-asm", "-fdebug-compilation-dir", "/home/mudk1p/llvm-tutorial/clang-sic/build/bin", "-ferror-limit", "19", "-fmessage-length", "117", "-fobjc-runtime=gcc", "-fcxx-exceptions", "-fexceptions", "-fdiagnostics-show-option", "-fcolor-diagnostics", "-o", "-", "-x", "c++", "./../../../test/lbdex/input/ch6_1.cpp"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../build/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch - TableGen",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../build/bin/llvm-tblgen",
+            "args": ["-gen-emitter", "-I", "/home/mudk1p/llvm-tutorial/clang-sic/sic-llvm/lib/Target/SIC", "-I", "/home/mudk1p/llvm-tutorial/clang-sic/sic-llvm/lib/Target", "-I", "/home/mudk1p/llvm-tutorial/clang-sic/sic-llvm/include", "/home/mudk1p/llvm-tutorial/clang-sic/sic-llvm/lib/Target/SIC/SICOther.td", "-o", "/home/mudk1p/llvm-tutorial/clang-sic/build/lib/Target/SIC/SICGenMCCodeEmitter.inc.tmp"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/lib/Target/SIC",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        {
+            "name": "(gdb) Launch - Clang Driver",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../build/bin/clang",
+            "args": ["-target", "sic-unknown-linux-gnu", "-c", "${workspaceFolder}/../../test/lbdex/input/ch6_1.cpp", "-emit-llvm", "-o", "ch6_1.sic.bc"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../build/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        {
+            "name": "(gdb) Launch - LLC",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../build/bin/llc",
+            "args": ["-march=sic", "-mcpu=sicse", "-relocation-model=static", "-filetype=asm", "-sic-s32-calls=true", "-debug", "${workspaceFolder}/../input/ch9_1.bc", "-o", "${workspaceFolder}/../input/debug.sic.asm"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/../build/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
