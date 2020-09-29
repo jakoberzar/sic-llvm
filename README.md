@@ -20,7 +20,7 @@ cmake \
     -DLLVM_USE_LINKER=gold \
     -DLLVM_PARALLEL_LINK_JOBS=2 \
     ./../
-make -j8
+make -j4
 ```
 
 The built binaries are then available in the `build/bin` folder.
