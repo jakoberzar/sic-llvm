@@ -1,17 +1,16 @@
 {
-    "cmake.configureOnOpen": false,
-    "editor.rulers": [
-        82
-    ],
-    "files.associations": {
-        "*.inc": "cpp",
-        "*.tcc": "cpp",
-        "deque": "cpp",
-        "list": "cpp",
-        "unordered_map": "cpp",
-        "vector": "cpp"
-    },
-    "files.exclude": {
-        "**/.git": false
-    },
+  "cmake.configureOnOpen": false,
+  "editor.rulers": [82],
+  "files.associations": {
+    "*.inc": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp"
+  },
+  "files.exclude": {
+    "**/.git": false
+  },
+  "editor.formatOnSave": true
 }
