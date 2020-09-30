@@ -39,7 +39,7 @@ The built binaries are then available in the `build/bin` folder.
 
   `./build/bin/llc ./fib-recursive.ll -O3 -o fib-recursive.sic.asm`
 
-Relevant files are shown in the [EXAMPLE.md](./EXAMPLE.md) file
+Relevant files are shown in the [EXAMPLE.md](./EXAMPLE.md) file.
 
 ## Features
 
